@@ -1,0 +1,209 @@
+@import './variables';
+
+/*公共按钮样式*/
+.el-button {
+  line-height: 22px;
+  font-size: 12px;
+  padding: 0 15px !important;
+  &.el-button--primary {
+    border: 1px solid @theme;
+    background: @theme;
+  }
+  &.el-button--default {
+    padding: 0 15px !important;
+  }
+}
+
+/*公共输入框样式样式*/
+.el-input__inner {
+  height: 28px;
+  line-height: 28px;
+  border: 1px solid @theme-border;
+  border-radius: 4px;
+  padding: 0 2px 0 5px;
+  font-size: 13px;
+  &:focus {
+    border: 1px solid @theme-border-focus;
+  }
+}
+
+/*公共select样式样式*/
+.el-select {
+  height: 28px;
+  line-height: 28px;
+  border-radius: 4px;
+  .el-input__inner:focus {
+    border: 1px solid @theme-border-focus;
+  }
+  .el-input.is-focus .el-input__inner {
+    border: 1px solid @theme-border-focus;
+  }
+  .el-input__icon {
+    line-height: normal;
+  }
+}
+
+/*table公共样式*/
+.el-table {
+  thead {
+    th {
+      background: #eef1f6;
+      color: #333;
+      height: 30px;
+      padding: 0;
+      border-right: 1px solid #f9f9f9;
+    }
+  }
+  tbody {
+    td {
+      cursor: pointer;
+      height: 30px;
+      padding: 0;
+    }
+  }
+}
+
+/*pagination分页样式*/
+.el-pagination {
+  padding: 10px 0;
+  margin-left: 20px;
+  .el-pagination__total {
+    font-size: 12px;
+    height: 25px;
+    line-height: 25px;
+  }
+  .el-input__icon {
+    line-height: normal;
+  }
+  .el-pager {
+    li {
+      height: 25px;
+      line-height: 25px;
+      font-weight: normal;
+      font-size: 12px;
+      padding: 0;
+      color: #666;
+      margin-top: 2px;
+      position: relative;
+      top: 1px;
+      &.number {
+        margin: 0 2px;
+      }
+      &.active {
+        background-color: @theme!important;
+      }
+    }
+  }
+  .el-pagination__sizes {
+    height: 25px;
+    line-height: 25px;
+    .el-select {
+      height: 25px;
+      line-height: 25px;
+      .el-input {
+        .el-input__inner {
+          height: 24px;
+          line-height: 24px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .btn-prev,
+  .btn-next {
+    height: 25px;
+    line-height: 25px;
+    position: relative;
+    top: 1px;
+  }
+  .el-select-dropdown__item.selected {
+    font-weight: normal;
+  }
+  .el-pagination__jump {
+    .el-pagination__editor {
+      .el-input__inner {
+        height: 25px;
+        line-height: 25px;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+/*公共的el-tabs*/
+.el-tabs {
+  .el-tabs__header {
+    margin-bottom: 12px;
+    .el-tabs__active-bar {
+      height: 2px;
+    }
+    .el-tabs__nav-wrap::after {
+      height: 1px;
+      background: #e4e4e4;
+    }
+    .el-tabs__item {
+      color: #333;
+      line-height: 46px;
+      &.is-active {
+        color: @theme;
+      }
+    }
+  }
+}
+
+/*公共的el-dialog*/
+.el-dialog {
+  .el-dialog__header {
+    padding: 0;
+    height: 40px;
+    line-height: 40px;
+    .el-dialog__title {
+      font-size: 14px;
+      margin-left: 10px;
+      color: #666;
+    }
+    .el-dialog__headerbtn {
+      top: 10px;
+      right: 10px;
+      .el-dialog__close {
+        font-size: 20px;
+        color: #ccc;
+      }
+    }
+  }
+  .el-dialog__body {
+    padding: 10px 20px;
+    padding-top: 0;
+    max-height: calc(60vh);
+    overflow: auto;
+  }
+  .el-dialog__footer {
+    margin-top: 10px;
+    .dialog-footer {
+      .el-button {
+        &:first-child {
+          color: #333;
+        }
+        &:last-child {
+          color: #fff;
+          background: #40a0d4;
+        }
+      }
+    }
+  }
+}
+
+/* tooltip --- style */
+.el-tooltip__popper.is-dark {
+  max-width: 40%;
+}
+
+//滚动条样式
+.el-scrollbar {
+  .el-scrollbar__wrap {
+    overflow-x: hidden;
+  }
+  .el-scrollbar__thumb {
+    background-color: transparent !important;
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "code": "SUCCESS",
+  "message": "成功!",
+  "items": [{
+    "path": "/thread/follow",
+    "name": "跟踪"
+  }, {
+    "path": "/thread/almostDone",
+    "name": "即将签约"
+  }, {
+    "path": "/thread/sign",
+    "name": "签约"
+  }, {
+    "path": "/thread/all",
+    "name": "全部"
+  }]
+}

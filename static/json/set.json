@@ -1,0 +1,30 @@
+{
+  "code": "SUCCESS",
+  "message": "成功!",
+  "items": [{
+    "name": "用户管理",
+    "children": [{
+        "path": "/set/role",
+        "name": "角色管理"
+      },
+      {
+        "path": "/set/organization",
+        "name": "组织管理"
+      }, {
+        "path": "/set/user",
+        "name": "用户管理"
+      }
+    ]
+  }, {
+    "name": "业务设置",
+    "children": [{
+        "path": "/set/module",
+        "name": "模块设置"
+      },
+      {
+        "path": "/set/viewport",
+        "name": "视图设置"
+      }
+    ]
+  }]
+}

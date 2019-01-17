@@ -1,0 +1,53 @@
+{
+  "code": "SUCCESS",
+  "message": "",
+  "items": [{
+      "menuId": 1,
+      "menuName": "首页",
+      "menuUrl": "/dashboard",
+      "menuIcon": "icon-index"
+    },
+    {
+      "menuId": 2,
+      "menuName": "线索",
+      "menuUrl": "/thread",
+      "menuIcon": "icon-index"
+    },
+    {
+      "menuId": 3,
+      "menuName": "客户",
+      "menuUrl": "/source/page3",
+      "menuIcon": "icon-client"
+    },
+    {
+      "menuId": 4,
+      "menuName": "联系人",
+      "menuUrl": "/source/page4",
+      "menuIcon": "icon-linkman"
+    },
+    {
+      "menuId": 5,
+      "menuName": "数据",
+      "menuUrl": "/source/page5",
+      "menuIcon": "icon-data"
+    },
+    {
+      "menuId": 6,
+      "menuName": "启动",
+      "menuUrl": "/source/page2",
+      "menuIcon": "icon-start"
+    },
+    {
+      "menuId": 7,
+      "menuName": "财务",
+      "menuUrl": "/source/page7",
+      "menuIcon": "icon-finance"
+    },
+    {
+      "menuId": 8,
+      "menuName": "设置",
+      "menuUrl": "/set",
+      "menuIcon": "icon-set"
+    }
+  ]
+}

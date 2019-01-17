@@ -1,0 +1,93 @@
+//所有标签样式
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', 'Microsoft Yahei', sans-serif;
+}
+//去除长按a链接弹框
+html,
+body {
+  -webkit-touch-callout: none;
+  font-size: 14px;
+}
+/*去除点击高亮效果以及继承父元素的字体系列样式*/
+a,
+button,
+input,
+img,
+label {
+  -webkit-tap-highlight-color: transparent;
+  outline: medium none;
+  border: none;
+}
+a {
+  text-decoration: none;
+}
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+}
+input::-moz-focus-inner {
+  border: none;
+  padding: 0;
+}
+select,
+input {
+  vertical-align: baseline;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #ccc;
+}
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: #ccc;
+}
+//html5标签
+header,
+footer,
+section,
+article,
+aside,
+nav,
+figure {
+  display: block;
+}
+//去除默认样式
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+i,
+em,
+address,
+caption,
+cite,
+code,
+dfn,
+th,
+var {
+  font-weight: normal;
+  font-style: normal;
+  margin: 0;
+}
+fieldset,
+img {
+  border: none;
+}
+//去除默认样式
+ul,
+ol,
+li {
+  list-style: none;
+}
+//表格边框合并，边框距零
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
