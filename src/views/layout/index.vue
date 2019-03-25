@@ -1,81 +1,58 @@
 <template>
-  <section>
-    <left-sidebar></left-sidebar>
-    <section class="wrapper"
-             :style="'width: '+clientWidth+'px;'">
-      <main-header></main-header>
-
-      <div :class="levelClass.contentBar"
-           class="clearfix">
-        <template>
-          <content-tab v-if="level===2"
-                       :contentTabs="contentTabs"
-                       :menusType="menusType"
-                       :clientHeight="clientHeight"></content-tab>
-          <keep-alive :include="cachedViews">
-            <router-view :key="key"
-                         :class="levelClass.sidebarRouter"
-                         :style="'height: '+clientHeight+'px;'"></router-view>
-          </keep-alive>
-        </template>
-      </div>
+  <section class="app-wrapper">
+    <navigation class="app-nav" :menus="menus"></navigation>
+    <section class="app-main">
+      <keep-alive :include="cachedViews">
+        <router-view :key="key"></router-view>
+      </keep-alive>
     </section>
   </section>
 </template>
 
 <script>
+import menus from '@/configs/menu.js'
+import Navigation from './components/navigation'
 
 export default {
-  name: 'layout',
+  name: 'Layout',
   components: {
+    Navigation
   },
   data () {
     return {
-      level: 1,
-      menusType: 'common',
-      levelClass: {
-        contentBar: '',
-        sidebarRouter: ''
-      }
+      menus: menus
     }
   },
   created () {
-    this.jumpRouter(this.$route)
-    this.onresize()
   },
   watch: {
-    $route (toRoute, fromRoute) {
-      this.jumpRouter(toRoute)
-    }
   },
   methods: {
-    jumpRouter (router) {
-      let match = router.matched[0]
-      this.menusType = match.name
-      let bool = match.meta.level && match.meta.level === 2
-      if (bool) {
-        this.level = match.meta.level
-        this.levelClass.contentBar = 'content-sidebar'
-        this.levelClass.sidebarRouter = 'content-sidebar-router'
-        this.$store.dispatch('setResize')
-      } else {
-        this.level = 1
-        this.levelClass.contentBar = 'content-wrapper'
-        this.levelClass.sidebarRouter = 'content-wrapper-router'
-        this.$store.dispatch('setResize', 75)
-      }
-    },
-    onresize () {
-      window.onresize = () => {
-        this.$store.dispatch('setResize', this.level === 2 ? null : 75)
-      }
-    }
   },
   computed: {
+    cachedViews () {
+      return []
+    },
+    key () {
+      return this.$route.fullPath
+    }
   }
 }
 </script>
 
 <style lang="less" scoped>
-
+.app-wrapper{
+  width: 100%;
+  height: 100%;
+  .app-nav{
+    position: fixed;
+    left:20px;
+    right: 20px;
+    top: 0px;
+  }
+  .app-main{
+    margin-top: 60px;
+    height: calc(100% - 80px);
+  }
+}
 </style>

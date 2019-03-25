@@ -20,7 +20,7 @@
 <script>
 
 export default {
-  name: 'JyHighlight',
+  name: 'fsHighlight',
   props: {
   },
   components: {

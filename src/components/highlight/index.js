@@ -1,7 +1,7 @@
-import JyHighlight from './highlight'
+import Highlight from './highlight'
 
-JyHighlight.install = Vue => {
-  Vue.component(JyHighlight.name, JyHighlight)
+Highlight.install = Vue => {
+  Vue.component(Highlight.name, Highlight)
 }
 
-export default JyHighlight
+export default Highlight

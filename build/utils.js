@@ -5,10 +5,10 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const packageConfig = require('../package.json')
 
 exports.assetsPath = function (_path) {
-  const assetsSubDirectory =  process.env.NODE_ENV === 'production' ||
-                              process.env.NODE_ENV === 'stage' || 
+  const assetsSubDirectory = process.env.NODE_ENV === 'production' ||
+                              process.env.NODE_ENV === 'stage' ||
                               process.env.NODE_ENV === 'qa' ||
-                              process.env.NODE_ENV === 'dev' 
+                              process.env.NODE_ENV === 'dev'
     ? config.build.assetsSubDirectory
     : config.local.assetsSubDirectory
 
@@ -32,9 +32,16 @@ exports.cssLoaders = function (options) {
     }
   }
 
+  const sassLoader = {
+    loader: 'sass-loader',
+    options: {
+      sourceMap: options.sourceMap
+    }
+  }
+
   // generate loader string to be used with extract text plugin
   function generateLoaders (loader, loaderOptions) {
-    const loaders = options.usePostCSS ? [cssLoader, postcssLoader] : [cssLoader]
+    const loaders = options.usePostCSS ? [cssLoader, postcssLoader, sassLoader] : [cssLoader]
 
     if (loader) {
       loaders.push({

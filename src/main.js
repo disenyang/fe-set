@@ -5,11 +5,10 @@ import App from './App'
 import router from './router'
 import store from './store'
 // 组件
-import JyUI from './components'
+import EUI from './components'
 
-// 导入element-ui组件
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
+import DemoBlock from './views/components/demo-box'
+import 'highlight.js/styles/github-gist.css'
 
 // 混入(公共方法)
 import Mixin from './mixin.js'
@@ -24,8 +23,9 @@ import {
 
 Vue.config.productionTip = false // 设置为 false 以阻止 vue 在启动时生成生产提示。
 
-Vue.use(JyUI)
-Vue.use(ElementUI)
+Vue.use(EUI)
+
+Vue.component(DemoBlock.name, DemoBlock)
 
 // 引入公共样式
 require('./assets/styles/base.less')
@@ -55,11 +55,11 @@ axios.interceptors.response.use((response) => {
   if (error.response.status * 1 === 401) {
     window.location.href = loginUrl + '&redirect=' + encodeURIComponent(document.URL)
   } else if (error.response.status * 1 === 400) {
-    ElementUI.Message.error(error.response.data.message)
+    FsUI.Message.error(error.response.data.message)
   } else if (error.response.status * 1 === 403) {
-    ElementUI.Message.error(error.response.data.message)
+    FsUI.Message.error(error.response.data.message)
   } else {
-    ElementUI.Message.error(error.response.data.message)
+    FsUI.Message.error(error.response.data.message)
   }
 })
 

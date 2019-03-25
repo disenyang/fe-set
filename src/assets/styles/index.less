@@ -1,8 +1,8 @@
 @import './font';
 @import './elementui';
-@import './scrollbar';
 @import './transition';
 @import './flex';
+@import './variables';
 
 //字体颜色
 .c-333 {
@@ -15,6 +15,18 @@
   color: #999;
 }
 
+//主题颜色
+.c-main{
+  color: @theme;
+}
+//轻主题颜色
+.c-main-light{
+  color: @theme-light;
+}
+//深主题颜色
+.c-main-dark{
+  color: @theme-dark;
+}
 //左右浮动
 .fl {
   float: left;

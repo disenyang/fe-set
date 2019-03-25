@@ -6,18 +6,17 @@ const path = require('path')
 
 module.exports = {
   local: {
-
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-       target: 'http://contract.saas.sh-jiuye.com.cn',
-       changeOrigin: true,
-       pathRewrite: {
-         '^/api': '/'
-       }
-     }
+        target: 'http://localhost:15000',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': '/'
+        }
+      }
     },
 
     // Various Dev Server settings
@@ -35,7 +34,7 @@ module.exports = {
     // If true, eslint errors and warnings will also be shown in the error overlay
     // in the browser.
     showEslintErrorsInOverlay: false,
-    
+
     /**
      * Source Maps
      */
