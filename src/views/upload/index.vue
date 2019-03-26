@@ -182,11 +182,9 @@ export default {
       this.mdcode = editor.getValue()
     },
     save () {
-      let params = {
-        pageNo: this.page,
-        pageSize: this.pageSize,
-        title: this.title,
-        content: ''
+      let params = {...this.component,
+        coid: '33a91785a545d263ddfbac581a2e0b84',
+        createuser: '343706ca20ab92f6e44ea97e091d964c'
       }
       Component.save(params).then(res => {
         console.log('res', res)
